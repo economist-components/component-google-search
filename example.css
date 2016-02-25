@@ -1,0 +1,18 @@
+@import './index';
+
+body {
+  background: white !important;
+}
+
+.search__example-container {
+  position: relative;
+  width: 100%;
+  background: var(--color-kiev);
+  height: 64px;
+  font-family: var(--fontfamily-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#___gcse_0 {
+  width: 500px;
+}
