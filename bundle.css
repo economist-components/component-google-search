@@ -2,53 +2,76 @@
  * Colors
  */
 
+/* stylelint-disable custom-property-pattern, number-max-precision */
+
 @font-face {
-  font-family: "EconSans";
+  font-family: EconSans;
   font-weight: 300;
-  src: url('/assets/ecosans-lig.woff2') format('woff2'), /* Super Modern Browsers */
-  url('/assets/ecosans-lig.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecosans-lig.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecosans-lig.woff') format('woff');
 }
 
 @font-face {
-  font-family: "EconSans";
+  font-family: EconSans;
   font-style: normal;
-  src: url('/assets/ecosans-reg.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/ecosans-reg.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecosans-reg.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecosans-reg.woff') format('woff');
 }
 
 @font-face {
-  font-family: "EconSans";
+  font-family: EconSans;
   font-weight: 700;
-  src: url('/assets/ecosans-bol.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/ecosans-bol.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecosans-bol.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecosans-bol.woff') format('woff');
 }
 
 @font-face {
-  font-family: "EconSans";
+  font-family: EconSans;
   font-style: italic;
-  src: url('/assets/ecosans-ita.woff2') format('woff2'), /* Super Modern Browsers */
-  url('/assets/ecosans-ita.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecosans-ita.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecosans-ita.woff') format('woff');
 }
 
 @font-face {
-  font-family: "MiloSerifPro";
+  font-family: MiloSerifPro;
   font-style: normal;
-  src: url('/assets/ecoserif-reg.woff2') format('woff2'), /* Super Modern Browsers */
-  url('/assets/ecoserif-reg.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecoserif-reg.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecoserif-reg.woff') format('woff');
 }
 
 @font-face {
-  font-family: "MiloSerifPro";
+  font-family: MiloSerifPro;
   font-style: italic;
-  src: url('/assets/ecoserif-ita.woff2') format('woff2'), /* Super Modern Browsers */
-  url('/assets/ecoserif-ita.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecoserif-ita.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecoserif-ita.woff') format('woff');
 }
 
 @font-face {
-  font-family: "MiloSerifPro";
+  font-family: MiloSerifPro;
   font-weight: 500;
-  src: url('/assets/ecoserif-med.woff2') format('woff2'), /* Super Modern Browsers */
-  url('/assets/ecoserif-med.woff') format('woff'); /* Pretty Modern Browsers */
+  src:
+    /* Super Modern Browsers */
+    url('/assets/ecoserif-med.woff2') format('woff2'),
+    /* Pretty Modern Browsers */
+    url('/assets/ecoserif-med.woff') format('woff');
 }
 
 /**
@@ -87,9 +110,11 @@
   /* Font: FF Milo Serif OT Medium */
 }
 
+/* stylelint-disable selector-no-type */
+
 html {
-  line-height: 1.35;
   font-size: 18px;
+  line-height: 1.35;
 }
 
 @media screen and (min-width: 500px) {
@@ -99,17 +124,17 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .google-search {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  color: #FFFFFF;
-  background: #FFFFFF;
-  border-top: 1px solid #F2F2F2;
+  color: #fff;
+  background: #fff;
+  border-top: 1px solid #f2f2f2;
 }
 
 .google-search .gsc-search-box {
@@ -124,7 +149,7 @@ body {
 .google-search input.gsc-input {
   padding: 0;
   outline: none;
-  color: #383E42;
+  color: #383e42;
   font-size: 2em;
   border: none;
 }
@@ -150,7 +175,7 @@ td.gsc-input {
   height: 64px;
   -webkit-font-smoothing: antialiased;
   font-family: 'EconSans', Tahoma, sans-serif;
-  background: #383E42;
+  background: #383e42;
 }
 
 /* stylelint-disable selector-no-id, selector-max-specificity */
