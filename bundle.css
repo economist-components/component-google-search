@@ -2,7 +2,19 @@
  * Colors
  */
 
-/* stylelint-disable custom-property-pattern, number-max-precision */
+/* stylelint-disable no-indistinguishable-colors */
+
+/* to pass linting against --color-thimphu --color-berlin */
+
+/* stylelint-enable no-indistinguishable-colors */
+
+/* stylelint-disable custom-property-pattern, number-max-precision, value-keyword-case */
+
+/* */
+
+/* stylelint-disable value-keyword-case */
+
+/* too many components refer to EconSans */
 
 @font-face {
   font-family: EconSans;
@@ -111,6 +123,8 @@
 }
 
 /* stylelint-disable selector-no-type */
+
+/* setting base font size on html - no default selector */
 
 html {
   font-size: 18px;
