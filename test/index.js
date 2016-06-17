@@ -76,5 +76,17 @@ describe('GoogleSearch', () => {
       comp.googleSearchInput.focus.should.not.have.been.called();
     });
   });
+
+  describe('loadScript', () => {
+    it('returns this.props.loadGoogleCustomSearch when passed', () => {
+      /* eslint-disable no-empty-function, no-unused-vars */
+      const neverResolve = new Promise((resolve) => {});
+      /* eslint-enable no-empty-function, no-unused-vars */
+      comp.props.loadGoogleCustomSearch = chai.spy(() => neverResolve);
+      const loadedScript = comp.loadScript();
+      comp.props.loadGoogleCustomSearch.should.have.been.called();
+      loadedScript.should.equal(neverResolve);
+    });
+  });
 });
 

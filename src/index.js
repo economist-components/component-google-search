@@ -26,8 +26,8 @@ export default class GoogleSearch extends React.Component {
     };
   }
 
-  constructor(props) {
-    super(props);
+  constructor(...args) {
+    super(...args);
     this.unmounted = false;
   }
 
@@ -90,25 +90,32 @@ export default class GoogleSearch extends React.Component {
       ReactDom.findDOMNode(this).querySelector('input[name=search]');
   }
 
+  loadScript() {
+    if (this.props.loadGoogleCustomSearch) {
+      return this.props.loadGoogleCustomSearch();
+    }
+    return new Promise((resolve, reject) => {
+      window.__gcse = { // eslint-disable-line no-underscore-dangle, id-match
+        parsetags: 'explicit',
+        callback: resolve, // eslint-disable-line id-blacklist
+      };
+      // Loading this script it provide us the only additional functionality
+      // of autocompletition that is probably achievable by custom code using
+      // the Google Search API (Probably paid version).
+      const protocol = (document.location.protocol) === 'https:' ? 'https:' : 'http:';
+      const src = `${ protocol }//${ this.props.googleScriptUrl }?cx=${ this.props.cx }`;
+      promisescript({
+        url: src,
+        type: 'script',
+      }).catch((exception) => {
+        reject(new Error(`An error occurs loading or executing Google Custom Search: ${ exception.message }`));
+      });
+    });
+  }
+
   ensureScriptHasLoaded() {
     if (!googleScript) {
-      googleScript = new Promise((resolve, reject) => {
-        window.__gcse = { // eslint-disable-line no-underscore-dangle, id-match
-          parsetags: 'explicit',
-          callback: resolve, // eslint-disable-line id-blacklist
-        };
-        // Loading this script it provide us the only additional functionality
-        // of autocompletition that is probably achievable by custom code using
-        // the Google Search API (Probably paid version).
-        const protocol = (document.location.protocol) === 'https:' ? 'https:' : 'http:';
-        const src = `${ protocol }//${ this.props.googleScriptUrl }?cx=${ this.props.cx }`;
-        promisescript({
-          url: src,
-          type: 'script',
-        }).catch((exception) => {
-          reject(new Error(`An error occurs loading or executing Google Custom Search: ${ exception.message }`));
-        });
-      });
+      googleScript = this.loadScript();
     }
     return googleScript;
   }
@@ -145,7 +152,7 @@ export default class GoogleSearch extends React.Component {
   }
 }
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'production') {
   GoogleSearch.propTypes = {
     enableHistory: React.PropTypes.bool,
     noResultsString: React.PropTypes.string,
@@ -158,6 +165,7 @@ if (process.env.NODE_ENV === 'production') {
     googleScriptUrl: React.PropTypes.string,
     autoFocus: React.PropTypes.bool,
     divID: React.PropTypes.string,
+    loadGoogleCustomSearch: React.PropTypes.func,
   };
 }
 
