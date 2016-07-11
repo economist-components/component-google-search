@@ -122,7 +122,7 @@ export default class GoogleSearch extends React.Component {
 
   render() {
     return (
-      <div className="google-search" id={this.state.divID}>
+      <div className="google-search" id={this.state.divID} role="search">
         <div className="fallback" style={{ display: (this.state.useFallback) ? 'block' : 'none' }}>
           <form
             acceptCharset="UTF-8"
@@ -168,4 +168,3 @@ if (process.env.NODE_ENV !== 'production') {
     loadGoogleCustomSearch: React.PropTypes.func,
   };
 }
-
