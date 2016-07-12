@@ -121,8 +121,12 @@ export default class GoogleSearch extends React.Component {
   }
 
   render() {
+    let ariaRole = null;
+    if (this.props.ariaSearchRole) {
+      ariaRole = 'search';
+    }
     return (
-      <div className="google-search" id={this.state.divID}>
+      <div className="google-search" id={this.state.divID} role={ariaRole}>
         <div className="fallback" style={{ display: (this.state.useFallback) ? 'block' : 'none' }}>
           <form
             acceptCharset="UTF-8"
@@ -166,6 +170,6 @@ if (process.env.NODE_ENV !== 'production') {
     autoFocus: React.PropTypes.bool,
     divID: React.PropTypes.string,
     loadGoogleCustomSearch: React.PropTypes.func,
+    ariaSearchRole: React.PropTypes.bool,
   };
 }
-
