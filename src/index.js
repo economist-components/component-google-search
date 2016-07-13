@@ -29,6 +29,7 @@ export default class GoogleSearch extends React.Component {
   constructor(...args) {
     super(...args);
     this.unmounted = false;
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   componentWillMount() {
@@ -57,7 +58,21 @@ export default class GoogleSearch extends React.Component {
   }
 
   componentWillUnmount() {
+    this.removeEventListener();
     this.unmounted = true;
+  }
+
+  removeEventListener() {
+    if (this.googleSearchInput) {
+      this.googleSearchInput.removeEventListener('keydown', this.handleKeyPress);
+    }
+  }
+
+  handleKeyPress(evt) {
+    const ESC = 27;
+    if (evt && evt.keyCode === ESC && typeof this.props.onDismissed === 'function') {
+      this.props.onDismissed();
+    }
   }
 
   focusSearchField() {
@@ -86,8 +101,10 @@ export default class GoogleSearch extends React.Component {
       },
     };
     window.google.search.cse.element.render(config);
+    this.removeEventListener();
     this.googleSearchInput =
       ReactDom.findDOMNode(this).querySelector('input[name=search]');
+    this.googleSearchInput.addEventListener('keydown', this.handleKeyPress);
   }
 
   loadScript() {
@@ -142,6 +159,7 @@ export default class GoogleSearch extends React.Component {
               id="edit-search-theme-form-1"
               title="Enter the terms you wish to search for."
               className="gsc-input"
+              onKeyDown={this.handleKeyPress}
             />
             <input
               id="edit-cx"
@@ -171,5 +189,6 @@ if (process.env.NODE_ENV !== 'production') {
     divID: React.PropTypes.string,
     loadGoogleCustomSearch: React.PropTypes.func,
     ariaSearchRole: React.PropTypes.bool,
+    onDismissed: React.PropTypes.func,
   };
 }
