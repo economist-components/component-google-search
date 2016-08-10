@@ -30,9 +30,7 @@
   font-family: EconSans;
   font-style: normal;
   src:
-    /* Super Modern Browsers */
     url('/assets/ecosans-reg.woff2') format('woff2'),
-    /* Pretty Modern Browsers */
     url('/assets/ecosans-reg.woff') format('woff');
 }
 
@@ -40,9 +38,7 @@
   font-family: EconSans;
   font-weight: 700;
   src:
-    /* Super Modern Browsers */
     url('/assets/ecosans-bol.woff2') format('woff2'),
-    /* Pretty Modern Browsers */
     url('/assets/ecosans-bol.woff') format('woff');
 }
 
@@ -50,9 +46,7 @@
   font-family: EconSans;
   font-style: italic;
   src:
-    /* Super Modern Browsers */
     url('/assets/ecosans-ita.woff2') format('woff2'),
-    /* Pretty Modern Browsers */
     url('/assets/ecosans-ita.woff') format('woff');
 }
 
@@ -60,9 +54,7 @@
   font-family: MiloSerifPro;
   font-style: normal;
   src:
-    /* Super Modern Browsers */
     url('/assets/ecoserif-reg.woff2') format('woff2'),
-    /* Pretty Modern Browsers */
     url('/assets/ecoserif-reg.woff') format('woff');
 }
 
@@ -70,9 +62,7 @@
   font-family: MiloSerifPro;
   font-style: italic;
   src:
-    /* Super Modern Browsers */
     url('/assets/ecoserif-ita.woff2') format('woff2'),
-    /* Pretty Modern Browsers */
     url('/assets/ecoserif-ita.woff') format('woff');
 }
 
@@ -80,10 +70,88 @@
   font-family: MiloSerifPro;
   font-weight: 500;
   src:
-    /* Super Modern Browsers */
     url('/assets/ecoserif-med.woff2') format('woff2'),
-    /* Pretty Modern Browsers */
     url('/assets/ecoserif-med.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-Light;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndlig-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndlig-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-LightIt;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndligita-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndligita-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-Regular;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndreg-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndreg-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-Italic;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndita-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndita-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-Medium;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndmed-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndmed-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-MediumIt;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndmedita-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndmedita-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-Bold;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndbol-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndbol-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-BoldIt;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndbolita-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndbolita-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-ExtraBold;
+  font-weight: normal;
+  src:
+    url('/assets/econsanscndxbol-webfont.woff2') format('woff2'),
+    url('/assets/econsanscndxbol-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: EconSansCnd-ExtraBoldIt;
+  font-weight: normal;
+  src:
+    url('/assets/econsansxbolita-webfont.woff2') format('woff2'),
+    url('/assets/econsansxbolita-webfont.woff') format('woff');
 }
 
 /**
