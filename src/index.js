@@ -46,7 +46,7 @@ export default class GoogleSearch extends React.Component {
         if (this.unmounted) {
           return;
         }
-        this.setState({}, this.state, { useFallback: false });
+        this.setState(Object.assign({}, this.state, { useFallback: false }));
         this.displayGoogleSearch();
         this.focusSearchField();
       })
