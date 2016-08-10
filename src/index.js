@@ -35,8 +35,8 @@ export default class GoogleSearch extends React.Component {
   componentWillMount() {
     this.setState({
       divID: this.props.divID || `google-search-box-${ randomHex() }`,
-      // useFallback by default on SS
-      useFallback: (typeof window === 'undefined'),
+      // useFallback by default
+      useFallback: true,
     });
   }
 
@@ -46,6 +46,7 @@ export default class GoogleSearch extends React.Component {
         if (this.unmounted) {
           return;
         }
+        this.setState({}, this.state, { useFallback: false });
         this.displayGoogleSearch();
         this.focusSearchField();
       })
