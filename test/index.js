@@ -4,7 +4,6 @@ import React from 'react';
 import chai from 'chai';
 import chaiSpies from 'chai-spies';
 import chaiEnzyme from 'chai-enzyme';
-import { shallow } from 'enzyme';
 chai.use(chaiEnzyme()).should();
 chai.use(chaiSpies);
 
@@ -23,13 +22,6 @@ describe('GoogleSearch', () => {
     React.isValidElement(<GoogleSearch />).should.equal(true);
   });
 
-  it('checks for correct state when client-rendering', () => {
-    // Shallow was used rather than mount, otherwise the component is mounted
-    // twice in the example, as the Google APIs are called twice.
-    const wrapper = shallow(<GoogleSearch />);
-    wrapper.state().useFallback.should.equal(false);
-  });
-
   describe('componentWillMount', () => {
     const oldMathRandom = Math.random;
     afterEach(() => {
@@ -41,7 +33,7 @@ describe('GoogleSearch', () => {
       comp.componentWillMount();
       comp.setState.should.have.been.called.with({
         divID: 'test-div-id',
-        useFallback: (typeof window === 'undefined'),
+        useFallback: true,
       });
     });
     it('calls setState with a random hash if this.props.divID is not present', () => {
@@ -52,7 +44,7 @@ describe('GoogleSearch', () => {
       comp.componentWillMount();
       comp.setState.should.have.been.called.with({
         divID: `google-search-box-${ multipliedAndInHex }`,
-        useFallback: (typeof window === 'undefined'),
+        useFallback: true,
       });
     });
   });
