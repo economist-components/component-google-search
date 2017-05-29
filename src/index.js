@@ -139,24 +139,32 @@ export default class GoogleSearch extends React.Component {
   }
 
   render() {
-    let ariaRole = null;
-    if (this.props.ariaSearchRole) {
-      ariaRole = 'search';
-    }
+    const {
+      ariaSearchRole,
+      resultsUrl,
+      queryParameterName,
+      cx,
+    } = this.props;
     return (
-      <div className="google-search" id={this.state.divID} role={ariaRole}>
+      <div
+        className="google-search"
+        id={this.state.divID}
+        role={ariaSearchRole ? 'search' : null}
+        aria-label={ariaSearchRole ? 'Search Bar' : null}
+      >
         <div className="fallback" style={{ display: (this.state.useFallback) ? 'block' : 'none' }}>
           <form
             acceptCharset="UTF-8"
             method="GET"
             id="search-theme-form"
-            action={this.props.resultsUrl}
+            action={resultsUrl}
             className="gsc-input"
           >
             <input
+              aria-label="Search Field"
               type="text"
               maxLength="128"
-              name={this.props.queryParameterName}
+              name={queryParameterName}
               id="edit-search-theme-form-1"
               title="Enter the terms you wish to search for."
               className="gsc-input"
@@ -164,7 +172,7 @@ export default class GoogleSearch extends React.Component {
             />
             <input
               id="edit-cx"
-              value={this.props.cx}
+              value={cx}
               type="hidden"
               name="cx"
             />
