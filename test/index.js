@@ -3,8 +3,7 @@ import GoogleSearch from '../src';
 import React from 'react';
 import chai from 'chai';
 import chaiSpies from 'chai-spies';
-import chaiEnzyme from 'chai-enzyme';
-chai.use(chaiEnzyme()).should();
+chai.should();
 chai.use(chaiSpies);
 
 describe('GoogleSearch', () => {

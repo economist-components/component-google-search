@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import promisescript from 'promisescript';
+import PropTypes from 'prop-types';
 
 function randomHex() {
   return Math.floor(Math.random() * 10000).toString(16);  // eslint-disable-line no-magic-numbers
@@ -185,19 +186,19 @@ export default class GoogleSearch extends React.Component {
 
 if (process.env.NODE_ENV !== 'production') {
   GoogleSearch.propTypes = {
-    enableHistory: React.PropTypes.bool,
-    noResultsString: React.PropTypes.string,
-    newWindow: React.PropTypes.bool,
-    gname: React.PropTypes.string,
-    queryParameterName: React.PropTypes.string,
-    language: React.PropTypes.string,
-    resultsUrl: React.PropTypes.string,
-    cx: React.PropTypes.string, // eslint-disable-line id-length
-    googleScriptUrl: React.PropTypes.string,
-    autoFocus: React.PropTypes.bool,
-    divID: React.PropTypes.string,
-    loadGoogleCustomSearch: React.PropTypes.func,
-    ariaSearchRole: React.PropTypes.bool,
-    onDismissed: React.PropTypes.func,
+    enableHistory: PropTypes.bool,
+    noResultsString: PropTypes.string,
+    newWindow: PropTypes.bool,
+    gname: PropTypes.string,
+    queryParameterName: PropTypes.string,
+    language: PropTypes.string,
+    resultsUrl: PropTypes.string,
+    cx: PropTypes.string, // eslint-disable-line id-length
+    googleScriptUrl: PropTypes.string,
+    autoFocus: PropTypes.bool,
+    divID: PropTypes.string,
+    loadGoogleCustomSearch: PropTypes.func,
+    ariaSearchRole: PropTypes.bool,
+    onDismissed: PropTypes.func,
   };
 }
