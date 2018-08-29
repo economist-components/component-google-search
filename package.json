@@ -1,6 +1,6 @@
 {
   "name": "@economist/component-google-search",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "A search field with autocompletition based on GCS",
   "homepage": "https://github.com/economist-components/component-google-search",
   "bugs": {
